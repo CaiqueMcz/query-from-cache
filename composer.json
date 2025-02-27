@@ -1,0 +1,22 @@
+{
+  "name": "caiquemcz/query-from-cache",
+  "autoload": {
+    "psr-4": {
+      "CaiqueMcz\\QueryFromCache\\": "src/"
+    }
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-latest",
+    "orchestra/testbench": "^6.47",
+    "squizlabs/php_codesniffer": "3.*",
+    "phpstan/phpstan": "2.*"
+  },
+  "require": {
+    "myclabs/php-enum": "^1.8"
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "CaiqueMcz\\QueryFromCache\\Tests\\": "tests/"
+    }
+  }
+}
