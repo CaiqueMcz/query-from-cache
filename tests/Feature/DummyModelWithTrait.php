@@ -1,6 +1,6 @@
 <?php
 
-namespace CaiqueMcz\QueryFromCache\Tests\Integration;
+namespace CaiqueMcz\QueryFromCache\Tests\Feature;
 
 use CaiqueMcz\QueryFromCache\Traits\HasQueryFromCache;
 use Illuminate\Database\Eloquent\Model;

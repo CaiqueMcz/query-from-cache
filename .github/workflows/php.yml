@@ -1,0 +1,48 @@
+name: PHP Tests
+on:
+  push:
+    branches: [ "main", "master", "develop" ]
+  pull_request:
+    branches: [ "main", "master", "develop" ]
+permissions:
+  contents: write
+  id-token: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php-versions: ['7.4', '8.0', '8.1']
+
+    name: PHP ${{ matrix.php-versions }} Tests
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: ${{ matrix.php-versions }}
+        extensions: mbstring, intl, json, xml, curl
+        coverage: xdebug
+    - name: Validate composer.json and composer.lock
+      run: composer validate
+    - name: Cache Composer packages
+      id: composer-cache
+      uses: actions/cache@v3
+      with:
+        path: vendor
+        key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-php-
+
+    - name: Install dependencies
+      run: composer install --prefer-dist --no-progress
+
+    - name: Create Test Environment Variables
+      run: |
+        echo "APP_ENV=test" >> $GITHUB_ENV
+    - name: Run Unit Tests
+      run: vendor/bin/phpunit tests/Unit --testdox
+
+    - name: Run Feature Tests (With Mocks)
+      run: vendor/bin/phpunit tests/Feature --testdox

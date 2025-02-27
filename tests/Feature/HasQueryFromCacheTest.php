@@ -1,6 +1,6 @@
 <?php
 
-namespace CaiqueMcz\QueryFromCache\Tests\Integration;
+namespace CaiqueMcz\QueryFromCache\Tests\Feature;
 
 use Illuminate\Support\Facades\Cache;
 use CaiqueMcz\QueryFromCache\Tests\PackageTestCase;
