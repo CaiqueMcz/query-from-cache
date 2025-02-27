@@ -1,5 +1,7 @@
 {
   "name": "caiquemcz/query-from-cache",
+  "description": "Query From Cache is a Laravel package that provides a simple way to cache query results directly from your Eloquent models. It automatically caches the output of model methods and offers actions to refresh or clear the cache with minimal code changes.",
+  "type": "library",
   "autoload": {
     "psr-4": {
       "CaiqueMcz\\QueryFromCache\\": "src/"
@@ -18,5 +20,6 @@
     "psr-4": {
       "CaiqueMcz\\QueryFromCache\\Tests\\": "tests/"
     }
-  }
+  },
+  "license": "MIT"
 }

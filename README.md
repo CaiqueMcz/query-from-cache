@@ -1,7 +1,3 @@
-Below is an example README.md for your project:
-
----
-
 # Query From Cache
 
 Query From Cache is a Laravel package that provides a simple way to cache query results directly from your Eloquent models. It automatically caches the output of model methods and offers actions to refresh or clear the cache with minimal code changes.
