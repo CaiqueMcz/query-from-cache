@@ -141,7 +141,3 @@ Contributions are welcome! Please follow these steps:
 ## License
 
 This package is open-sourced software licensed under the [MIT license](LICENSE).
-
----
-
-Feel free to modify this README to better suit your project's needs and additional instructions.
